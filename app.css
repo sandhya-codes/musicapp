@@ -5,31 +5,34 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: rgb(255, 202, 32);
+  background-color:white;
   color: black;
   padding-bottom: 100px;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .nav-bar{
   width: 100%;
   padding: 10px;
-  background-color:rgb(23, 22, 22);
+  background-color:rgb(252, 250, 250);
   display: flex;
   align-items: center;
   
  }
 .logo-music{
   border: 2px solid black;
-  background-color: black;
-  color: white;
+  
+  color: rgb(201, 43, 43);
   border: 2px solid white;
 }
+
  
  
  
 .main_music_lyrics{
+  position: relative;
   
    display: flex;
    justify-content: center;
@@ -38,7 +41,7 @@ body {
  
 .music-player {
 
-  background:black;
+  background:rgb(216, 141, 141) ;
   backdrop-filter: blur(10px);
   width:400px;
   box-shadow: 12px 4px 30px black;
@@ -50,17 +53,19 @@ body {
   object-fit: cover;
   border-radius: 1rem;
   animation: spin 8s linear infinite paused;
+   
 }
  
 
 button {
   margin: 5px;
   padding: 10px 15px;
-  background-color: #ffffff33;
+  background-color: #c8c6c633;
   border: none;
   border-radius: 12px;
-  color: black;
+  color: rgb(12, 12, 12);
   cursor: pointer;
+  border: 2px solid black;
   transition: transform 0.2s, background 0.3s;
 }
 
@@ -69,11 +74,15 @@ button:hover {
   background-color: #ffffff55;
   transform: scale(1.05);
 }
-
+.playlists{
+  background-color:rgb(216, 141, 141);
+  padding: 30px;
+}
 .playlist-row {
   display: flex;
   overflow-x: auto;
   padding-bottom: 10px;
+  background-color:rgb(216, 141, 141);
 }
  
 .playlist-row::-webkit-scrollbar {
@@ -81,7 +90,7 @@ button:hover {
 }
 
 .playlist-row::-webkit-scrollbar-thumb {
-  background: #ffffff44;
+  background: black;
   border-radius: 3px;
 }
 
@@ -89,7 +98,7 @@ button:hover {
   flex: 0 0 auto;
   width:300px;
   margin-right: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  background:white;
   padding: 10px;
   border-radius: 12px;
   text-align: center;

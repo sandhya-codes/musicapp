@@ -12,7 +12,7 @@
 
     body {
       height: 100vh;
-      background: rgb(255, 202, 32);
+      background:#FFD95F #FFEFC8;
       font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
       position: relative;
@@ -27,6 +27,7 @@
       position: absolute;
       border-radius: 50%;
       background:rgba(0, 0, 0, 0.1);
+
       animation: float 10s infinite ease-in-out alternate;
     }
 
@@ -78,8 +79,8 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: rgba(52, 51, 51, 0.6); /* Yellow with opacity */
-      animation: float 10s infinite ease-in-out alternate;
+      background-color: rgb(216, 141, 141,0.5);
+       animation: float 10s infinite ease-in-out alternate;
 
     }
 
@@ -112,7 +113,7 @@
    
 
     .login-box {
-      background:black;
+       
       color: white;
       padding: 30px;
       border-radius: 15px;
@@ -139,7 +140,7 @@
 
     .login-box h2 {
       margin-bottom: 20px;
-      color: rgb(255, 202, 32); /* Yellow color */
+      color: rgb(10, 10, 10); /* Yellow color */
     }
 
     input {
@@ -148,28 +149,32 @@
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      background: #1e1e1e;
-      color: white;
+      color: rgb(9, 9, 9);
+      background: #1e1e1e #FFD95F;
+
     }
 
     button {
       padding: 10px 20px;
       border: none;
-      background: rgb(255, 202, 32); /* Yellow color */
+      background:rgb(216, 141, 141);;
+        
       font-weight: bold;
       border-radius: 10px;
       cursor: pointer;
+      color:black;
       transition: 0.3s ease;
     }
 
     button:hover {
-      background: white;
-      color: rgb(255, 202, 32); /* Yellow color */
+      background:black;
+      color:white;
+       
     }
 
     .reset-link {
       margin-top: 10px;
-      color: rgb(255, 202, 32); /* Yellow color */
+      color:black;
       cursor: pointer;
       text-decoration: underline;
       display: inline-block;
@@ -190,12 +195,12 @@
     }
 
     .message.success {
-      background: #003f66; /* Dark blue background */
-      color: white;
+      background:rgb(216, 141, 141); /* Dark blue background */
+      color: rgb(8, 8, 8);
     }
 
     .message.error {
-      background: linear-gradient(rgb(12, 12, 12), rgb(255, 202, 32)); /* Gradient from original theme */
+      background: black;
       border: 2px solid black;
       color: white;
     }

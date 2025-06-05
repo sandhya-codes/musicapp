@@ -12,7 +12,8 @@
 
     body {
       height: 100vh;
-      background: rgb(255, 202, 32);
+      background:#FFD95F #FFEFC8;
+      /* background: linear-gradient(#0A1F44,#D4AF37 ); */
       font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
       position: relative;
@@ -22,7 +23,8 @@
     .circle {
       position: absolute;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.1);
+      /* background: rgba(0, 0, 0, 0.1); */
+      background-color: rgb(216, 141, 141,0.5);
       animation: floatVertical 10s infinite ease-in-out alternate;
     }
 
@@ -75,49 +77,12 @@
       }
     }
 
-    /* Moving animals animation */
-    .animal {
-      position: absolute;
-      background: url('./duck.png') no-repeat center center;
-      width: 100px;
-      height: 100px;
-      background-size: contain;
-      animation: moveAnimal 5s infinite alternate;
-    }
-
-    .animal:nth-child(6) {
-      top: 10%;
-      left: 50%;
-      animation-delay: 0s;
-    }
-
-    .animal:nth-child(7) {
-      top: 30%;
-      left: 10%;
-      animation-delay: 3s;
-    }
-
-    .animal:nth-child(8) {
-      top: 70%;
-      left: 50%;
-      animation-delay: 5s;
-    }
-
-    @keyframes moveAnimal {
-      0% {
-        transform: translateX(0px);
-        width: 100px;
-      }
-      100% {
-        transform: translateX(50px);
-        width: 200px;
-      }
-    }
+    
 
     /* Login box styling */
     .login-box {
-      background: black;
-      color: white;
+      
+      color:black;
       padding: 30px;
       border-radius: 15px;
       width: 320px;
@@ -143,7 +108,7 @@
 
     .login-box h2 {
       margin-bottom: 20px;
-      color: rgb(255, 202, 32);
+      color: rgb(3, 3, 3);
     }
 
     input {
@@ -152,28 +117,29 @@
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      background: #1e1e1e;
-      color: white;
+      background: #1e1e1e #FFD95F;
+      color: rgb(10, 10, 10);
     }
 
     button {
       padding: 10px 20px;
       border: none;
-      background: rgb(255, 202, 32);
+      background:rgb(216, 141, 141);
       font-weight: bold;
       border-radius: 10px;
       cursor: pointer;
+      color: rgb(15, 15, 15);
       transition: 0.3s ease;
     }
 
     button:hover {
-      background: white;
-      color: black;
+      background: rgb(13, 13, 13);
+      color:white;
     }
 
     .reset-link {
       margin-top: 10px;
-      color: rgb(255, 202, 32);
+      color: black;
       cursor: pointer;
       text-decoration: underline;
       display: inline-block;
@@ -181,7 +147,8 @@
 
     .signup-link {
       margin-top: 10px;
-      color: rgb(255, 202, 32);
+      color:black;
+       
       cursor: pointer;
       text-decoration: underline;
       display: inline-block;
@@ -202,12 +169,12 @@
     }
 
     .message.success {
-      background-color: #28a745;
+      background-color:rgb(216, 141, 141);
       color: white;
     }
 
     .message.error {
-      background-color: #dc3545;
+      background-color:black;
       color: white;
     }
 
@@ -228,9 +195,9 @@
   <div class="circle"></div>
 
   <!-- Moving animals -->
+  <!-- <div class="animal"></div>
   <div class="animal"></div>
-  <div class="animal"></div>
-  <div class="animal"></div>
+  <div class="animal"></div> -->
 
   <!-- Form container -->
   <div class="login-box">
@@ -312,7 +279,7 @@
 
     // Redirect to Signup page when 'Sign Up' link is clicked
     signupLink.addEventListener('click', () => {
-      window.location.href = './signup.html'; // Your signup page URL
+      window.location.href = './sigup.html'; // Your signup page URL
     });
   </script>
 </body>

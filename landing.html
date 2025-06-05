@@ -9,18 +9,17 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: rgb(255, 202, 32);
-      color: white;
+      background-color:rgb(234, 228, 228);
+      color:black;
       display: flex;
     }
 
     .sidebar {
       width: 300px;
-      background-color: rgb(255, 202, 32);
+      background-color:rgb(216, 141, 141);
       padding: 20px;
       overflow-y: auto;
       height: 100vh;
-      border: 7px solid rgb(13, 13, 13);
     }
 
     .song-list {
@@ -30,7 +29,7 @@
     }
 
     .song {
-      background-color: #111;
+      background-color:rgb(216, 141, 141);
       padding: 10px;
       border-radius: 10px;
       display: flex;
@@ -41,8 +40,8 @@
     }
 
     .song:hover {
-      background-color: rgb(255, 202, 32);
-      color: black;
+      background-color:black;
+      color:white;
     }
 
     .song img {
@@ -60,6 +59,7 @@
     .main-page {
       flex-grow: 1;
       padding: 20px;
+      
     }
 
     .nav-bar {
@@ -67,13 +67,13 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 30px;
-      background-color: #000;
+      background-color: #e3e0e0;
       padding: 10px;
       border-radius: 20px;
     }
 
     .logo-music {
-      background-color: rgb(255, 202, 32);
+      background-color:rgb(216, 141, 141);
       color: black;
       padding: 10px 20px;
       border-radius: 20px;
@@ -92,14 +92,14 @@
     .search-bar {
       display: flex;
       align-items: center;
-      background-color: #222;
+      background-color: rgb(216, 141, 141);
       border-radius: 10px;
       overflow: hidden;
     }
 
     .search-bar p {
       margin: 0;
-      background-color: rgb(255, 202, 32);
+      background-color:black;
       padding: 5px 10px;
       border-radius: 0 10px 10px 0;
       font-size: 24px;
@@ -110,15 +110,14 @@
     }
 
     .music-player {
-      background: black;
+      background:rgb(216, 141, 141);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 10px solid rgba(13, 13, 13, 0.1);
       border-radius: 20px;
       padding: 30px;
       max-width: 400px;
       margin: auto;
-      border: 4px solid rgb(12, 12, 12);
     }
 
     .album-cover {
@@ -130,7 +129,6 @@
     .controls button {
       background-color: transparent;
       border: none;
-      color: rgb(255, 202, 32);
       font-size: 30px;
       margin: 0 10px;
       cursor: pointer;
@@ -142,7 +140,7 @@
     }
 
     button.login-btn ,button.Signup-btn{
-      background-color: rgb(255, 202, 32);
+      background-color: rgb(216, 141, 141);
       color: black;
       border: none;
       padding: 8px 16px;
@@ -150,19 +148,108 @@
       font-weight: bold;
       cursor: pointer;
     }
-
+    button:hover {
+    transform: scale(1.05);
+  }
     .sidebar::-webkit-scrollbar {
       width: 8px;
     }
 
     .sidebar::-webkit-scrollbar-track {
-      background: #111;
+      background:rgb(242, 231, 212);
     }
 
     .sidebar::-webkit-scrollbar-thumb {
-      background: rgb(255, 202, 32);
+      border: 4px solid rgb(74, 74, 74);
+      background:rgb(216, 141, 141);
       border-radius: 10px;
     }
+
+     /* Animated background circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background:rgba(197, 138, 138, 0.5);
+      animation: float 10s infinite ease-in-out alternate;
+    }
+
+    .circle:nth-child(1) {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      right:10%;
+      animation-delay: 0s;
+      box-shadow: 2px 2px black;
+
+    }
+
+    .circle:nth-child(2) {
+      width: 100px;
+      height: 100px;
+      top: 90%;
+      left: 40%;
+      animation-delay: 2s;
+      box-shadow: 2px 2px black;
+
+    }
+
+    .circle:nth-child(3) {
+      width: 120px;
+      height: 120px;
+      top: 30%;
+      left: 40%;
+      animation-delay: 4s;
+      box-shadow: 2px 2px black;
+
+    }
+    .circle:nth-child(4) {
+      width: 150px;
+      height: 150px;
+      top: 18%;
+      right:5%;
+      animation-delay: 0s;
+      box-shadow: 2px 2px black;
+
+    }
+
+    .circle:nth-child(5) {
+      width: 100px;
+      height: 100px;
+      top: 10%;
+      left: 50%;
+      animation-delay: 2s;
+      box-shadow: 2px 2px black;
+
+    }
+
+    .circle:nth-child(6) {
+      width: 120px;
+      height: 120px;
+      top: 50%;
+      left: 30%;
+      animation-delay: 0s;
+      box-shadow: 2px 2px black;
+
+    }
+
+     .circle:nth-child(7) {
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 70%;
+      animation-delay: 3s;
+      box-shadow: 2px 2px black;
+
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-30px) rotate(360deg);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -174,6 +261,8 @@
 
   <!-- Main Section -->
   <div class="main-page">
+      <div class="circle"></div>
+
     <!-- Navigation Bar -->
     <div class="nav-bar">
       <div class="logo-music">Music</div>
@@ -187,6 +276,17 @@
 
     <!-- Music Player -->
     <div class="main_music_lyrics">
+
+       <!-- Animated background circles -->
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+
+
       <div class="music-player text-center">
         <img src="./cover13.png" alt="Cover" class="album-cover mb-3" id="cover">
         <h3 id="title">Select a Song</h3>
@@ -214,50 +314,50 @@
       },
       {
         title: "chill",
-        file: "song 2.mp3",
-        image: "cover 4.png",
+        file: "song2.mp3",
+        image: "cover4.png",
         artist: "Artist B"
       },
       {
         title: "plesent",
-        file: "song 5.mp3",
-        image: "cover 11.png",
+        file: "song5.mp3",
+        image: "cover11.png",
         artist: "Artist C"
       },
       {
         title: "soft music",
-        file: "song 1.mp3",
-        image: "cover 13.png",
+        file: "song1.mp3",
+        image: "cover13.png",
         artist: "Artist A"
       },
       {
         title: "yoga",
-        file: "song 2.mp3",
-        image: "cover 3.png",
+        file: "song2.mp3",
+        image: "cover3.png",
         artist: "Artist B"
       },
       {
         title: "theme",
-        file: "song 4.mp3",
-        image: "cover 9.png",
+        file: "song4.mp3",
+        image: "cover9.png",
         artist: "Artist C"
       },
       {
         title: "Song",
-        file: "song 1.mp3",
-        image: "cover 7.png",
+        file: "song1.mp3",
+        image: "cover7.png",
         artist: "Artist A"
       },
       {
         title: "enjoy",
-        file: "song 2.mp3",
-        image: "cover 10.png",
+        file: "song2.mp3",
+        image: "cover10.png",
         artist: "Artist B"
       },
       {
         title: "stylish",
-        file: "song 3.mp3",
-        image: "cover 11.png",
+        file: "song3.mp3",
+        image: "cover11.png",
         artist: "Artist C"
       }
     ];

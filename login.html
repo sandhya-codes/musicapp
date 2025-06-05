@@ -1,0 +1,319 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: rgb(255, 202, 32);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Floating circles animation */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.1);
+      animation: floatVertical 10s infinite ease-in-out alternate;
+    }
+
+    .circle:nth-child(1) {
+      width: 150px;
+      height: 150px;
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .circle:nth-child(2) {
+      width: 100px;
+      height: 100px;
+      top: 50%;
+      left: 80%;
+      animation-delay: 2s;
+    }
+
+    .circle:nth-child(3) {
+      width: 120px;
+      height: 120px;
+      top: 80%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+
+    .circle:nth-child(4) {
+      width: 80px;
+      height: 80px;
+      top: 30%;
+      left: 40%;
+      animation-delay: 6s;
+    }
+
+    .circle:nth-child(5) {
+      width: 100px;
+      height: 100px;
+      top: 20%;
+      left: 60%;
+      animation-delay: 8s;
+    }
+
+    @keyframes floatVertical {
+      0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(-30px);
+      }
+    }
+
+    /* Moving animals animation */
+    .animal {
+      position: absolute;
+      background: url('./duck.png') no-repeat center center;
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      animation: moveAnimal 5s infinite alternate;
+    }
+
+    .animal:nth-child(6) {
+      top: 10%;
+      left: 50%;
+      animation-delay: 0s;
+    }
+
+    .animal:nth-child(7) {
+      top: 30%;
+      left: 10%;
+      animation-delay: 3s;
+    }
+
+    .animal:nth-child(8) {
+      top: 70%;
+      left: 50%;
+      animation-delay: 5s;
+    }
+
+    @keyframes moveAnimal {
+      0% {
+        transform: translateX(0px);
+        width: 100px;
+      }
+      100% {
+        transform: translateX(50px);
+        width: 200px;
+      }
+    }
+
+    /* Login box styling */
+    .login-box {
+      background: black;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      animation: popin 0.8s ease forwards;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes popin {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: rgb(255, 202, 32);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #1e1e1e;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: rgb(255, 202, 32);
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: white;
+      color: black;
+    }
+
+    .reset-link {
+      margin-top: 10px;
+      color: rgb(255, 202, 32);
+      cursor: pointer;
+      text-decoration: underline;
+      display: inline-block;
+    }
+
+    .signup-link {
+      margin-top: 10px;
+      color: rgb(255, 202, 32);
+      cursor: pointer;
+      text-decoration: underline;
+      display: inline-block;
+    }
+
+    .message {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      animation: slideDown 0.5s ease forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+      z-index: 1;
+    }
+
+    .message.success {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .message.error {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    @keyframes slideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- Moving animals -->
+  <div class="animal"></div>
+  <div class="animal"></div>
+  <div class="animal"></div>
+
+  <!-- Form container -->
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="reset-link" id="reset-password">Forgot Password?</div>
+    <div class="signup-link" id="signup-link">Don't have an account? Sign Up</div>
+    <div id="message" class="message" style="display: none;"></div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCWqqJjY71K4WkwAClXw4kabCqOhStzSGI",
+      authDomain: "music-web-aac0a.firebaseapp.com",
+      projectId: "music-web-aac0a",
+      storageBucket: "music-web-aac0a.appspot.com",
+      messagingSenderId: "554371445200",
+      appId: "1:554371445200:web:cd618f5965f251822f89d5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const form = document.getElementById('login-form');
+    const messageBox = document.getElementById('message');
+    const resetLink = document.getElementById('reset-password');
+    const signupLink = document.getElementById('signup-link');
+
+    function showMessage(type, text) {
+      messageBox.textContent = text;
+      messageBox.className = `message ${type}`;
+      messageBox.style.display = 'block';
+
+      setTimeout(() => {
+        messageBox.style.display = 'none';
+      }, 3000);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          showMessage('success', 'Login successful! Redirecting...');
+          setTimeout(() => {
+            window.location.href = './app.html'; // Your dashboard page
+          }, 2000);
+        })
+        .catch((error) => {
+          showMessage('error', 'Login failed: ' + error.message);
+        });
+    });
+
+    resetLink.addEventListener('click', () => {
+      const email = document.getElementById('email').value.trim();
+      if (!email) {
+        showMessage('error', 'Please enter your email first.');
+        return;
+      }
+
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          showMessage('success', 'Password reset link sent to your email.');
+        })
+        .catch((error) => {
+          showMessage('error', 'Error: ' + error.message);
+        });
+    });
+
+    // Redirect to Signup page when 'Sign Up' link is clicked
+    signupLink.addEventListener('click', () => {
+      window.location.href = './signup.html'; // Your signup page URL
+    });
+  </script>
+</body>
+</html>

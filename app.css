@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+#search-input{
+  border-radius: 1px 10px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(255, 202, 32);
+  color: black;
+  padding-bottom: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar{
+  width: 100%;
+  padding: 10px;
+  background-color:rgb(23, 22, 22);
+  display: flex;
+  align-items: center;
+  
+ }
+.logo-music{
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+ 
+ 
+ 
+.main_music_lyrics{
+  
+   display: flex;
+   justify-content: center;
+ 
+}
+ 
+.music-player {
+
+  background:black;
+  backdrop-filter: blur(10px);
+  width:400px;
+  box-shadow: 12px 4px 30px black;
+}
+
+.album-cover {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+  animation: spin 8s linear infinite paused;
+}
+ 
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  background-color: #ffffff33;
+  border: none;
+  border-radius: 12px;
+  color: black;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+
+button:hover {
+  background-color: #ffffff55;
+  transform: scale(1.05);
+}
+
+.playlist-row {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+ 
+.playlist-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.playlist-row::-webkit-scrollbar-thumb {
+  background: #ffffff44;
+  border-radius: 3px;
+}
+
+.song-item {
+  flex: 0 0 auto;
+  width:300px;
+  margin-right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.song-item:hover {
+  transform: translateY(-5px);
+  /* background: rgba(255, 255, 255, 0.2);
+   */
+}
+
+.song-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+.search-bar{
+  width: 50%;
+}
+  /* search bar */
+#search-input {
+  width: 100%;
+  /* max-width: 300px; */
+  padding: 8px 12px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+ 

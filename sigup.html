@@ -1,0 +1,302 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: rgb(255, 202, 32);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+     
+
+   
+
+    /* Animated background circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background:rgba(0, 0, 0, 0.1);
+      animation: float 10s infinite ease-in-out alternate;
+    }
+
+    .circle:nth-child(1) {
+      width: 150px;
+      height: 150px;
+      top: 10%;
+      right:50%;
+      animation-delay: 0s;
+    }
+
+    .circle:nth-child(2) {
+      width: 100px;
+      height: 100px;
+      top: 30%;
+      left: 0%;
+      animation-delay: 2s;
+    }
+
+    .circle:nth-child(3) {
+      width: 120px;
+      height: 120px;
+      top: 10%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-30px) rotate(360deg);
+      }
+    }
+
+    /* Curves at the right side */
+    .right-curves {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .right-curves .curve {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(52, 51, 51, 0.6); /* Yellow with opacity */
+      animation: float 10s infinite ease-in-out alternate;
+
+    }
+
+    .right-curves .curve:nth-child(1) {
+      top: 0%;
+      left: 30%;
+      animation-delay: 0s;
+    }
+
+    .right-curves .curve:nth-child(2) {
+      top: 40%;
+      left: 60%;
+      animation-delay: 2s;
+    }
+
+    .right-curves .curve:nth-child(3) {
+      top: 70%;
+      left: 0%;
+      animation-delay: 4s;
+    }
+@keyframes float {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-30px) rotate(360deg);
+      }
+    }
+   
+   
+
+    .login-box {
+      background:black;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      animation: popin 0.8s ease forwards;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes popin {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: rgb(255, 202, 32); /* Yellow color */
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #1e1e1e;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: rgb(255, 202, 32); /* Yellow color */
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: white;
+      color: rgb(255, 202, 32); /* Yellow color */
+    }
+
+    .reset-link {
+      margin-top: 10px;
+      color: rgb(255, 202, 32); /* Yellow color */
+      cursor: pointer;
+      text-decoration: underline;
+      display: inline-block;
+    }
+
+    .message {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      animation: slideDown 0.5s ease forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+      z-index: 1;
+    }
+
+    .message.success {
+      background: #003f66; /* Dark blue background */
+      color: white;
+    }
+
+    .message.error {
+      background: linear-gradient(rgb(12, 12, 12), rgb(255, 202, 32)); /* Gradient from original theme */
+      border: 2px solid black;
+      color: white;
+    }
+
+    @keyframes slideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <!-- Animated background circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- Curves on the right side -->
+  <div class="right-curves">
+    <div class="curve"></div>
+    <div class="curve"></div>
+    <div class="curve"></div>
+  </div>
+
+  <!-- Form container -->
+  <div class="login-box">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required minlength="6" />
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="reset-link" id="reset-password">Forgot Password?</div>
+    <div id="message" class="message" style="display: none;"></div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCWqqJjY71K4WkwAClXw4kabCqOhStzSGI",
+      authDomain: "music-web-aac0a.firebaseapp.com",
+      projectId: "music-web-aac0a",
+      storageBucket: "music-web-aac0a.appspot.com",
+      messagingSenderId: "554371445200",
+      appId: "1:554371445200:web:cd618f5965f251822f89d5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const form = document.getElementById('signup-form');
+    const messageBox = document.getElementById('message');
+    const resetLink = document.getElementById('reset-password');
+
+    function showMessage(type, text) {
+      messageBox.textContent = text;
+      messageBox.className = `message ${type}`;
+      messageBox.style.display = 'block';
+      setTimeout(() => {
+        messageBox.style.display = 'none';
+      }, 3000);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          showMessage('success', 'Signup successful! Redirecting...');
+          setTimeout(() => {
+            window.location.href = './login.html';
+          }, 2000);
+        })
+        .catch((error) => {
+          showMessage('error', error.message);
+        });
+    });
+
+    resetLink.addEventListener('click', () => {
+      const email = document.getElementById('email').value.trim();
+      if (!email) {
+        showMessage('error', 'Enter your email first.');
+        return;
+      }
+
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          showMessage('success', 'Password reset link sent to your email.');
+        })
+        .catch((error) => {
+          showMessage('error', error.message);
+        });
+    });
+  </script>
+</body>
+</html>

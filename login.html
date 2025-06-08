@@ -24,7 +24,7 @@
       position: absolute;
       border-radius: 50%;
       /* background: rgba(0, 0, 0, 0.1); */
-      background-color: rgb(216, 141, 141,0.5);
+      background-color: rgba(7, 7, 7, 0.5);
       animation: floatVertical 10s infinite ease-in-out alternate;
     }
 
@@ -52,6 +52,7 @@
       animation-delay: 4s;
     }
 
+     
     .circle:nth-child(4) {
       width: 80px;
       height: 80px;
@@ -124,17 +125,17 @@
     button {
       padding: 10px 20px;
       border: none;
-      background:rgb(216, 141, 141);
+      background:rgb(7, 7, 7);
       font-weight: bold;
       border-radius: 10px;
       cursor: pointer;
-      color: rgb(15, 15, 15);
+      color:white;
       transition: 0.3s ease;
     }
 
     button:hover {
-      background: rgb(13, 13, 13);
-      color:white;
+      background: rgb(152, 149, 149);
+      color:rgb(8, 8, 8);
     }
 
     .reset-link {
@@ -169,13 +170,13 @@
     }
 
     .message.success {
-      background-color:rgb(216, 141, 141);
-      color: white;
+      background-color:green;
+      color: rgb(14, 14, 14);
     }
 
     .message.error {
-      background-color:black;
-      color: white;
+      background-color:rgb(243, 13, 13);
+      color: rgb(7, 7, 7);
     }
 
     @keyframes slideDown {

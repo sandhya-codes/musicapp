@@ -23,8 +23,7 @@ body {
  }
 .logo-music{
   border: 2px solid black;
-  
-  color: rgb(201, 43, 43);
+  color: rgb(29, 28, 28);
   border: 2px solid white;
 }
 
@@ -41,7 +40,7 @@ body {
  
 .music-player {
 
-  background:rgb(216, 141, 141) ;
+  background:rgb(14, 13, 13,0.5) ;
   backdrop-filter: blur(10px);
   width:400px;
   box-shadow: 12px 4px 30px black;
@@ -60,10 +59,10 @@ body {
 button {
   margin: 5px;
   padding: 10px 15px;
-  background-color: #c8c6c633;
+  background-color: #0a0a0a33;
   border: none;
   border-radius: 12px;
-  color: rgb(12, 12, 12);
+  color: rgb(245, 242, 242);
   cursor: pointer;
   border: 2px solid black;
   transition: transform 0.2s, background 0.3s;
@@ -75,14 +74,13 @@ button:hover {
   transform: scale(1.05);
 }
 .playlists{
-  background-color:rgb(216, 141, 141);
+  background-color:rgba(12, 12, 12, 0.5);
   padding: 30px;
 }
 .playlist-row {
   display: flex;
   overflow-x: auto;
   padding-bottom: 10px;
-  background-color:rgb(216, 141, 141);
 }
  
 .playlist-row::-webkit-scrollbar {
@@ -90,7 +88,7 @@ button:hover {
 }
 
 .playlist-row::-webkit-scrollbar-thumb {
-  background: black;
+  background: rgba(12, 12, 12, 0.5);
   border-radius: 3px;
 }
 
